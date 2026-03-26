@@ -79,10 +79,7 @@ namespace MummyBot
             var mummybot = new BotStartup(services);
         
             
-            await mummybot.StartAsync(types);
-
-            Console.Read();
-        }
+            await mummybot.StartAsync(types);        }
 
         public object CoolDownBucketGenerator(object bucketType, CommandContext context)
         {
