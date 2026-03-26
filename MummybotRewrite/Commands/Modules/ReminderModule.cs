@@ -148,7 +148,7 @@ namespace Mummybot.Commands.Modules
                 else
                     sb.Append("minutes");
             }
-            sb.Append(.ToString());
+            sb.Append($" {time.ToString()} ");
             sb.Append(", I will remind you about ").Append(reminder.Message).Append(" (id: ").Append(reminder.Id).Append(")");
 
             await ReplyAsync(sb.ToString());
