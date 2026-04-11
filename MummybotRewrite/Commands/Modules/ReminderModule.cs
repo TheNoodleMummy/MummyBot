@@ -163,7 +163,7 @@ namespace Mummybot.Commands.Modules
             {
                 reminders.Add(i, GuildConfig.Reminders[i]);
             }
-
+            reminders.OrderBy(r => r.Value.ExpiresAtUTC);
             if (reminders.Count() == 0)
                 await ReplyAsync("You currently have no reminders set");
 
