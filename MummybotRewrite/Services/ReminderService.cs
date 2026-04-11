@@ -154,7 +154,7 @@ namespace Mummybot.Services
                 sb.Append(" late.");
             }
             var emb = new EmbedBuilder().WithDescription(Format.Url("jump!", reminder.JumpUrl));
-            if (reminder.OriginalMessageId == null)
+            if (reminder.OriginalMessageId == null || reminder.OriginalMessageId == 0)
                 await DiscordClient.GetGuild(reminder.GuildID).GetTextChannel(reminder.ChannelID).SendMessageAsync(sb.ToString(), embed: emb.Build());
             else
                 await ((await DiscordClient.GetGuild(reminder.GuildID).GetTextChannel(reminder.ChannelID).GetMessageAsync(reminder.OriginalMessageId)) as IUserMessage).ReplyAsync(sb.ToString());
