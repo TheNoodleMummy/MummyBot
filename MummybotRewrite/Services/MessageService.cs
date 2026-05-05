@@ -174,7 +174,7 @@ namespace Mummybot.Services
                     
                 }
                 else
-                    await c.SendMessageAsync($"```i recieved a dm from {message.Author} message passed:\n{message.Content}```");
+                    await c.SendMessageAsync($"```i recieved a dm from {message.Author}({message.Author.Id}) message passed:\n{message.Content}```");
             }
 
             if (!(message.Channel is SocketTextChannel textChannel) || !textChannel.Guild.CurrentUser.GetPermissions(textChannel).Has(ChannelPermission.SendMessages))
