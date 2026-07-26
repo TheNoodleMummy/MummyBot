@@ -168,8 +168,8 @@ namespace Mummybot.Services
                 {                    
                     foreach (var attachment in message.Attachments)
                     {
-                        using var stream = await _http.GetStreamAsync(message.Attachments.First().Url);
-                        await c.SendFileAsync(stream, message.Attachments.First().Filename, $"```i recieved a dm from {message.Author} message passed:\n{message.Content}```");
+                        using var stream = await _http.GetStreamAsync(attachment.Url);
+                        await c.SendFileAsync(stream, attachment.Filename, $"```i recieved a dm from {message.Author} message passed:\n{message.Content}```");
                     }
                     
                 }
